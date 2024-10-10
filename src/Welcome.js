@@ -44,18 +44,18 @@ export default class Welcome extends React.Component {
             color: "white"
         };
 
-        return <>
+        return <div className="mt-4">
             <h1 style={{ backgroundColor: "blue", color: "white" }}>Welcome Class Component</h1>
 
             <hr />
             <h2 style={myStyle}>State username is {this.state.username} and address is {this.state.address}</h2>
-            <button onClick={this.updateAll}>Update All</button>
-            <button onClick={this.updateUsername}>Update Username</button>
-            <button onClick={this.updateAddress}>Update Address</button>
-
+            <button className="btn btn-primary m-2" onClick={this.updateAll}>Update All</button>
+            <button className="btn btn-outline-primary m-2" onClick={this.updateUsername}>Update Username</button>
+            <button className="btn btn-primary m-2" onClick={this.updateAddress}>Update Address</button>
+            <button>Button</button>
             <hr />
             <h2 className="header">Props message is {this.props.message}</h2>
             <hr />
-        </>
+        </div>
     }
 }
