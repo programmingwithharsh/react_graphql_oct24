@@ -4,6 +4,9 @@ import AddProduct from "./AddProduct";
 import ProductList from "./ProductList";
 import Hello from "./component/Hello";
 import Title from "./Title";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Nav from "./Nav";
+import NotFound from "./NotFound";
 
 export default class Main extends React.Component {
     constructor(props) { // Class component lifecycle
@@ -69,12 +72,18 @@ export default class Main extends React.Component {
     render() { // Class component lifecycle, render view
         console.log("Main Component Render lifecycle - 2");
         return <>
-            <h1>Main Class Component</h1>
-            <Welcome message="I am learning React" />
-            <AddProduct />
-            <ProductList products={this.state.products} />
-            <Hello />
-            <Title />
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Nav />}>
+                        <Route index element={<Welcome message="I am learning React" />}></Route>
+                        <Route path="/title" element={<Title />}></Route>
+                        <Route path="/products" element={<ProductList products={this.state.products} />}></Route>
+                        <Route path="/addproduct" element={<AddProduct />}></Route>
+                        <Route path="/hello" element={<Hello />}></Route>
+                    </Route>
+                    <Route path="*" element={<NotFound />}></Route>
+                </Routes>
+            </BrowserRouter>
         </>
     }
 }
