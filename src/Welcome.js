@@ -2,12 +2,15 @@ import React from "react";
 
 export default class Welcome extends React.Component {
 
-    constructor() { // lifecycle method
-        super();
+    constructor(props) { // lifecycle method
+        super(props);
         this.state = { // define state, state is an object
             username: "Atul",
-            address: "Mumbai"
+            address: "Mumbai",
+            elements: ["Hydrogen", "Helium", "Lithium", "Beryllium", "Boron"],
+            flowers: ["Rose", "Dahlia", "Magnolia", "Tulip", "Daisy"]
         }
+        console.log("Props in welcome component ", this.props);
         console.log("Welcome Component Constructor lifecycle - 1");
         this.updateUsername = this.updateUsername.bind(this);
     }
@@ -33,12 +36,19 @@ export default class Welcome extends React.Component {
 
     render() { // lifecycle method
         console.log("Welcome Component Render lifecycle - 2");
+        console.log("Welcome component state is ", this.state);
         return <>
             <h1>Welcome Class Component</h1>
+
+            <hr />
             <h2>State username is {this.state.username} and address is {this.state.address}</h2>
             <button onClick={this.updateAll}>Update All</button>
             <button onClick={this.updateUsername}>Update Username</button>
             <button onClick={this.updateAddress}>Update Address</button>
+
+            <hr />
+            <h2>Props message is {this.props.message}</h2>
+            <hr />
         </>
     }
 }
