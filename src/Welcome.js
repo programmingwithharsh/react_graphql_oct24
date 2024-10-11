@@ -16,10 +16,18 @@ export default class Welcome extends React.Component {
         this.updateUsername = this.updateUsername.bind(this);
     }
 
+    shouldComponentUpdate() { // lifecyle
+        return true; // default in React
+    }
+
     updateUsername() { // normal method
         this.setState({ // to update state, we use this.setState, whenever state update component rerender
             username: "Sandeep"
         })
+    }
+
+    componentWillUnmount() {
+        console.log("Welcome Component Will Unmount");
     }
 
     updateAddress = () => { // arrow method
