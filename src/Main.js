@@ -9,12 +9,12 @@ import Nav from "./Nav";
 import NotFound from "./NotFound";
 import ProductDetail from "./ProductDetail";
 import UseEffectHookExample from "./component/UseEffectHookExample";
+import UserList from "./UserList";
+import UserList2 from "./UsersList2";
 
 export default class Main extends React.Component {
     constructor(props) { // Class component lifecycle
         super(props);
-        console.log("Props in Main component", this.props);
-        console.log("Main Component Constructor - lifecycle - 1");
         this.state = {
             products: [] // empty products
         }
@@ -24,11 +24,9 @@ export default class Main extends React.Component {
         this.setState({ // to update state, whenever state update component rerender
             products: getDataFromDb()
         })
-        console.log("Main Component componentDidMount - lifecycle - 3");
     }
 
     render() { // Class component lifecycle, render view
-        console.log("Main Component Render - lifecycle - 2");
         return <>
             <BrowserRouter>
                 <Routes>
@@ -40,6 +38,8 @@ export default class Main extends React.Component {
                         <Route path="/addproduct" element={<AddProduct />}></Route>
                         <Route path="/hello" element={<Hello />}></Route>
                         <Route path="/hooks" element={<UseEffectHookExample />}></Route>
+                        <Route path="/users" element={<UserList />}></Route>
+                        <Route path="/users2" element={<UserList2 />}></Route>
                     </Route>
                     <Route path="*" element={<NotFound />}></Route>
                 </Routes>

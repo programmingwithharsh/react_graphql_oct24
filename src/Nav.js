@@ -28,6 +28,12 @@ function Nav() {
                         <li className="nav-item">
                             <Link className="nav-link" to="/hooks">Hooks</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/users">Users (Funtional)</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/users2">Users (Class)</Link>
+                        </li>
                     </ul>
                 </div>
             </div>
