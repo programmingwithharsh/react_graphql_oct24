@@ -11,6 +11,7 @@ import ProductDetail from "./ProductDetail";
 import UseEffectHookExample from "./component/UseEffectHookExample";
 import UserList from "./UserList";
 import UserList2 from "./UsersList2";
+import Books from "./Books";
 
 export default class Main extends React.Component {
     constructor(props) { // Class component lifecycle
@@ -40,6 +41,7 @@ export default class Main extends React.Component {
                         <Route path="/hooks" element={<UseEffectHookExample />}></Route>
                         <Route path="/users" element={<UserList />}></Route>
                         <Route path="/users2" element={<UserList2 />}></Route>
+                        <Route path="/books" element={<Books />}></Route>
                     </Route>
                     <Route path="*" element={<NotFound />}></Route>
                 </Routes>
